@@ -3,5 +3,18 @@
 {% block content %}
     <h1>welcome to home page</h1>
     <h1>welcome to home page</h1><h1 style="color: rgb(245, 234, 234); background-color: rgb(25, 44, 38);">can i help you ?</h1> 
-
+    <ul>
+        {%for message in message_list%}
+            <h2><li>{{ message.text }} from database id = {{message.id}} </li></h2>
+        {% endfor %}
+        
+        <a href="{% url 'message' %}">ali</a> <!-- url convert 'name of url in urls.py' to a real url -->
+        {%if age < 20 %} 
+        <h3>he he you are too childe for this . just go away</h3>
+        {%else%}
+        <h3>welcome you are an adoult</h3>
+        {%endif%}
+        
+        <footer>your name is {{name}}</footer>
+    </ul>
 {% endblock content %}
